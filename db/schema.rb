@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210815190825) do
+ActiveRecord::Schema.define(version: 20210815191811) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body",       null: false
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20210815190825) do
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
-    t.string   "email"
-    t.string   "password"
+    t.string   "email",      null: false
+    t.string   "password",   null: false
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin"
