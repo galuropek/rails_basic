@@ -3,10 +3,9 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.text :body, null: false
       t.boolean :correct, default: false
-      t.references :question, index: true, foreign_key: true
+      t.references :question, foreign_key: true
 
       t.timestamps null: false
     end
-    # add_index :answers, :question_id
   end
 end
