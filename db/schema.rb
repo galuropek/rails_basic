@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20210815184937) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
-
   create_table "categories", force: :cascade do |t|
     t.string   "title",      null: false
     t.datetime "created_at", null: false
@@ -36,8 +34,6 @@ ActiveRecord::Schema.define(version: 20210815184937) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "questions", ["test_id"], name: "index_questions_on_test_id"
-
   create_table "tests", force: :cascade do |t|
     t.string   "title",                   null: false
     t.integer  "level",       default: 0
@@ -45,8 +41,6 @@ ActiveRecord::Schema.define(version: 20210815184937) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
-
-  add_index "tests", ["category_id"], name: "index_tests_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
