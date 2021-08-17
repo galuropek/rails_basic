@@ -24,4 +24,9 @@ questions.each do |question|
 end
 
 # User model
-5.times { User.create!(email: Faker::Internet.email, password: Faker::Internet.password) }
+5.times do
+  User.create!(
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      tests: tests[0..rand(0..2)])
+end
