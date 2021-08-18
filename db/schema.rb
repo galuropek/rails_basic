@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210817184636) do
+ActiveRecord::Schema.define(version: 20210818194238) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body",                        null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20210817184636) do
     t.integer  "category_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "user_id"
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
