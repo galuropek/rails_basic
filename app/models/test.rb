@@ -13,10 +13,12 @@ class Test < ActiveRecord::Base
   scope :medium, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
 
-  scope :titles_by_category_name, -> (category_name) {
+  scope :tests_by_category_name, -> (category_name) {
     joins('JOIN categories ON categories.id = tests.category_id')
       .where('categories.title = ?', category_name)
-      .order(title: :desc)
-      .pluck(:title)
   }
+
+  def self.titles_by_category_name(category_name)
+    tests_by_category_name(category_name).order(title: :desc).pluck(:title)
+  end
 end
