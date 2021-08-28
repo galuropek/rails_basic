@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210818194238) do
+ActiveRecord::Schema.define(version: 20210827071714) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body",                        null: false
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20210818194238) do
     t.datetime "updated_at",              null: false
     t.integer  "user_id"
   end
+
+  add_index "tests", ["title", "level"], name: "index_tests_on_title_and_level", unique: true
 
   create_table "tests_users", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
