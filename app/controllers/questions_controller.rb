@@ -1,28 +1,34 @@
 class QuestionsController < ApplicationController
-  before_action :find_test
+  before_action :find_test, only: [:index, :create]
+  before_action :find_question, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render plain: Question.all.map(&:body).join("\n")
+    render plain: @test.questions.map(&:body).join("\n")
   end
 
   def new
   end
 
   def show
-    @question = Question.find(params[:id])
   end
 
   def create
-    @test.questions.create(question_params)
-    redirect_to test_questions_path
+    question = @test.questions.new(question_params)
+    if question.save
+      render plain: "Question has been saved!"
+    else
+      render plain: "Something went wrong!"
+    end
   end
 
   def destroy
-    question = Question.find(params[:id])
-    question.destroy
-    redirect_to test_questions_path
+    if @question.destroy
+      render plain: "Question has been removed!"
+    else
+      render plain: "Something went wrong!"
+    end
   end
 
   private
@@ -33,6 +39,10 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def rescue_with_question_not_found
