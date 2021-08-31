@@ -1,0 +1,3 @@
+<h1>Show Question</h1>
+<h2>Body: <%= @question.body %></h2>
+<%= link_to "Remove question", question_path(@question), method: :delete, data: { confirm: "Are you sure?" } %>
