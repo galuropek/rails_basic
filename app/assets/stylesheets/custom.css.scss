@@ -1,0 +1,25 @@
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+
+  #right {
+      float: right;
+      list-style: none;
+
+      li {
+        float: left;
+        margin-left: 15px;
+      }
+  }
+
+  #left {
+    float: left;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
