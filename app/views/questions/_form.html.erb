@@ -1,0 +1,7 @@
+<h2><%= question_header %></h2>
+<%= form_for [@test, @question] do |form| %>
+  <%= form.label :body %><br>
+  <%= form.text_area :body, size: "70x5" %><br>
+
+  <%= form.submit %>
+<% end %>
