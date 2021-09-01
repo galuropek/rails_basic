@@ -1,0 +1,14 @@
+<%= form_for @test do |form| %>
+  <%= render 'shared/errors', resource: @test %>
+
+  <%= form.label :title %><br>
+  <%= form.text_field :title, id: :test_title %><br>
+
+  <%= form.label :level %><br>
+  <%= form.number_field :level, id: :test_level %><br>
+
+  <%= form.label :category_id %>:
+  <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
+
+  <%= form.submit %>
+<% end %>
