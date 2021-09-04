@@ -6,6 +6,8 @@ class TestPassage < ActiveRecord::Base
   before_validation :before_validation_set_test_question, on: :create
   before_update :before_save_set_next_question, on: :update
 
+  SUCCESS_THRESHOLD = 85
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
@@ -15,8 +17,16 @@ class TestPassage < ActiveRecord::Base
     current_question.nil?
   end
 
-  def result_percentage
+  def success?
+    correct_questions_percentage >= SUCCESS_THRESHOLD
+  end
+
+  def correct_questions_percentage
     (correct_questions.to_f / test.questions.count * 100).round(2)
+  end
+
+  def question_number
+    test.questions.order(:id).index(current_question).next
   end
 
   private
