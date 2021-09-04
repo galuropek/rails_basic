@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.content {
+    min-height: calc(100vh - 80px);
+}
