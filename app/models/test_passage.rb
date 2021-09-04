@@ -15,6 +15,10 @@ class TestPassage < ActiveRecord::Base
     current_question.nil?
   end
 
+  def result_percentage
+    (correct_questions.to_f / test.questions.count * 100).round(2)
+  end
+
   private
 
   def before_validation_set_test_question

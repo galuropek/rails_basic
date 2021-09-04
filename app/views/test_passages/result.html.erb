@@ -1,2 +1,9 @@
-<h2>The Test was Completed!</h2>
+<h2>The Test <%= @test_passage.test.title %> was Completed!</h2>
+<% if valid_result?(@test_passage, threshold: 85) %>
+  <h3>Test passed!</h3>
+  <p><%= result_value(@test_passage, "correct") %>% of questions are correct.</p>
+<% else %>
+  <h3>Test failed!</h3>
+  <p><%= result_value(@test_passage, "incorrect") %>% of questions are correct.</p>
+<% end %>
 <%= link_to 'Back to Tests', tests_path %>

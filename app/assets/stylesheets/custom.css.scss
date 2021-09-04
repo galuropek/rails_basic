@@ -2,13 +2,13 @@ footer {
   border-top: 1px solid #eaeaea;
 
   #right {
-      float: right;
-      list-style: none;
+    float: right;
+    list-style: none;
 
-      li {
-        float: left;
-        margin-right: 15px;
-      }
+    li {
+      float: left;
+      margin-right: 15px;
+    }
   }
 
   #left {
@@ -24,4 +24,12 @@ footer {
 
 h2 {
   color: Tomato;
+}
+
+span.incorrect {
+  color: indianred;
+}
+
+span.correct {
+  color: mediumseagreen;
 }
