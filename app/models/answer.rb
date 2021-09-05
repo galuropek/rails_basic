@@ -11,7 +11,7 @@ class Answer < ActiveRecord::Base
   private
 
   def validate_answers_count
-    if question && question.answers.size >= MAX_ANSWERS_COUNT
+    if question && question.answers.size > MAX_ANSWERS_COUNT
       errors.add(:answers_count, "expected: question contains <= #{MAX_ANSWERS_COUNT} answers")
     end
   end
