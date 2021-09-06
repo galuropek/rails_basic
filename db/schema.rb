@@ -59,14 +59,11 @@ ActiveRecord::Schema.define(version: 20210903182031) do
   add_index "tests", ["title", "level"], name: "index_tests_on_title_and_level", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "nickname"
-    t.string   "email",                      null: false
-    t.string   "password",                   null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.boolean  "admin",      default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "email",                           null: false
+    t.string   "password_digest",                 null: false
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

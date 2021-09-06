@@ -49,7 +49,7 @@ end
 5.times do
   User.create!(
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password_digest: Faker::Internet.password,
     tests: tests[0..rand(0..2)]
   )
 end
