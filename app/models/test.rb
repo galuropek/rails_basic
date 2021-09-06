@@ -1,6 +1,7 @@
 class Test < ActiveRecord::Base
+  has_many :test_passages
+  has_many :users, through: :test_passages
   has_many :questions
-  has_and_belongs_to_many :users
   belongs_to :category
   belongs_to :creator, foreign_key: "user_id", class_name: 'User'
 

@@ -1,17 +1,14 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :create]
-  before_action :find_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: [:new, :create]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
+  def show
   end
 
   def new
-    @question = Question.new
-  end
-
-  def show
+    @question = @test.questions.new
   end
 
   def edit
@@ -45,11 +42,11 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:body)
   end
 
-  def find_test
+  def set_test
     @test = Test.find(params[:test_id])
   end
 
-  def find_question
+  def set_question
     @question = Question.find(params[:id])
   end
 

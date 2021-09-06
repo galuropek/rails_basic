@@ -1,0 +1,12 @@
+<h2>The Test <%= @test_passage.test.title %> was Completed!</h2>
+<% if @test_passage.success? %>
+  <h3>Test passed!</h3>
+  <% tag_class = "correct" %>
+<% else %>
+  <h3>Test failed!</h3>
+  <% tag_class = "incorrect" %>
+<% end %>
+<p>
+  <%= content_tag :span, "#{@test_passage.correct_questions_percentage}%", class: tag_class %> of questions are correct.
+</p>
+<%= link_to 'Back to Tests', tests_path %>
