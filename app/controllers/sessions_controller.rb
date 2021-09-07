@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, except: %i[new create]
+
   def new
   end
 
