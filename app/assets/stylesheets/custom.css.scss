@@ -37,18 +37,12 @@ span.correct {
   color: mediumseagreen;
 }
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+.flash {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-#logo:hover {
-  color: white;
-  text-decoration: none;
+.flash.alert {
+  border-color: darkred;
 }
