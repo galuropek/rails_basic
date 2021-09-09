@@ -1,9 +1,11 @@
 footer {
   border-top: 1px solid #eaeaea;
+  margin-top: 15px;
 
   #right {
     float: right;
     list-style: none;
+    margin-top: 15px;
 
     li {
       float: left;
@@ -14,6 +16,7 @@ footer {
   #left {
     float: left;
     list-style: none;
+    margin-top: 15px;
 
     li {
       float: left;
@@ -32,4 +35,14 @@ span.incorrect {
 
 span.correct {
   color: mediumseagreen;
+}
+
+.flash {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flash.alert {
+  border-color: darkred;
 }

@@ -1,0 +1,15 @@
+<header class="mt-3">
+  <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <%= link_to 'Test Guru', root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <% if logged_in? %>
+        <span class="me-3 py-2 text-dark text-decoration-none">Welcome, <%= current_user.email %> Guru</span>
+        <%= link_to "Log out", logout_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
+      <% else %>
+        <%= link_to "Registration", signup_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <%= link_to "Login", login_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+      <% end %>
+    </nav>
+  </div>
+</header>
