@@ -3,8 +3,8 @@
 <p><b>Level:</b> <%= @test.level %></p>
 <p><b>Questions count:</b> <%= @test.questions.count %></p>
 <p>
-  <%= link_to 'Edit', edit_test_path(@test) %> |
-  <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to 'Edit', edit_admin_test_path(@test) %> |
+  <%= link_to 'Delete', admin_test_path(@test), method: :delete, data: {confirm: "Are you sure?"} %>
 </p>
 <hr>
 <h2>Questions:</h2>
@@ -17,5 +17,5 @@
   <%= render @test.questions %>
 </table>
 <hr>
-<%= link_to 'Create new question', new_test_question_path(@test) %><br>
-<%= link_to 'Back', tests_path %>
+<%= link_to 'Create new question', new_admin_test_question_path(@test) %><br>
+<%= link_to 'Back', admin_tests_path %>
