@@ -1,5 +1,5 @@
 <h2><%= question_header(@question) %></h2>
-<%= form_for [@test, @question] do |form| %>
+<%= form_for [:admin, @test, @question] do |form| %>
   <%= render 'shared/errors', resource: @question %>
 
   <%= form.label :body %><br>

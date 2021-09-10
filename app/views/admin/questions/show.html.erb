@@ -2,8 +2,8 @@
 <p><b>Body:</b> <%= @question.body %></p>
 <p><b>Answers count:</b> <%= @question.answers.count %></p>
 <p>
-  <%= link_to 'Edit', edit_question_path(@question) %> |
-  <%= link_to 'Delete', question_path(@question), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to 'Edit', edit_admin_question_path(@question) %> |
+  <%= link_to 'Delete', admin_question_path(@question), method: :delete, data: {confirm: "Are you sure?"} %>
 </p>
 <hr>
 <h2>Answers:</h2>
@@ -19,5 +19,5 @@
   </tbody>
 </table>
 <hr>
-<%= link_to 'Create a new Answer', new_question_answer_path(@question) %><br>
-<%= link_to 'Back', test_path(@question.test) %>
+<%= link_to 'Create a new Answer', new_admin_question_answer_path(@question) %><br>
+<%= link_to 'Back', admin_test_path(@question.test) %>
