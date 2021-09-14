@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def tests_by_level(level)
     self.tests.where(level: level)
   end
+
+  def admin?
+    self.is_a?(Admin)
+  end
 end
