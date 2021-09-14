@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     self.tests.where(level: level)
   end
 
+  def user_representation
+    first_name.present? ? first_name : email
+  end
+
   def admin?
     self.is_a?(Admin)
   end
