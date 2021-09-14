@@ -5,9 +5,11 @@
     <th>Title</th>
     <th>Level</th>
     <th>Questions</th>
-    <th>Actions</th>
+    <th colspan="3">Actions</th>
   </tr>
 
   <%= render @tests %>
 
 </table>
+<hr>
+<%= link_to 'Create new test', new_admin_test_path %>

@@ -2,8 +2,10 @@
 category = Category.create!(title: "Programming Languages")
 
 # correct_user
-correct_user = User.create!(
-  email: "test_user@gmail.com",
+correct_user = Admin.create!(
+  email: "test1234@gmail.com",
+  first_name: 'Harry',
+  last_name: 'Potter',
   password: "test1234",
   password_confirmation: "test1234"
 )

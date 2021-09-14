@@ -1,0 +1,23 @@
+<h2>Question</h2>
+<p><b>Body:</b> <%= @question.body %></p>
+<p><b>Answers count:</b> <%= @question.answers.count %></p>
+<p>
+  <%= link_to 'Edit', edit_admin_question_path(@question) %> |
+  <%= link_to 'Delete', admin_question_path(@question), method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
+<hr>
+<h2>Answers:</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Body</th>
+    <th colspan="3">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @question.answers %>
+  </tbody>
+</table>
+<hr>
+<%= link_to 'Create a new Answer', new_admin_question_answer_path(@question) %><br>
+<%= link_to 'Back', admin_test_path(@question.test) %>
