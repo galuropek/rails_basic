@@ -2,8 +2,8 @@
 <hr>
 <table>
   <tr>
-    <th><%= test_human_attr(:title) %></th>
-    <th><%= test_human_attr(:level) %></th>
+    <th><%= Test.human_attribute_name(:title) %></th>
+    <th><%= Test.human_attribute_name(:level) %></th>
     <th><%= t('.questions') %></th>
     <th colspan="3"><%= t('.actions') %></th>
   </tr>

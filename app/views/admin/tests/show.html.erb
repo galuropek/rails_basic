@@ -1,6 +1,6 @@
 <h2><%= Test.model_name.human %></h2>
-<p><b><%= test_human_attr(:title) %>:</b> <%= @test.title %></p>
-<p><b><%= test_human_attr(:level) %>:</b> <%= @test.level %></p>
+<p><b><%= Test.human_attribute_name(:title) %>:</b> <%= @test.title %></p>
+<p><b><%= Test.human_attribute_name(:level) %>:</b> <%= @test.level %></p>
 <p><b><%= t('.questions') %>:</b> <%= @test.questions.count %></p>
 <p>
   <%= link_to t('edit'), edit_admin_test_path(@test) %> |
