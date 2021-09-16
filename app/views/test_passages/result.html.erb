@@ -1,12 +1,13 @@
-<h2>The Test <%= @test_passage.test.title %> was Completed!</h2>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 <% if @test_passage.success? %>
-  <h3>Test passed!</h3>
+  <h3><%= t('.success') %></h3>
   <% tag_class = "correct" %>
 <% else %>
-  <h3>Test failed!</h3>
+  <h3><%= t('.failed') %></h3>
   <% tag_class = "incorrect" %>
 <% end %>
 <p>
-  <%= content_tag :span, "#{@test_passage.correct_questions_percentage}%", class: tag_class %> of questions are correct.
+  <%= content_tag :span, "#{@test_passage.correct_questions_percentage}% ", class: tag_class %>
+  <%= t('.message') %>
 </p>
-<%= link_to 'Back to Tests', tests_path %>
+<%= link_to t('back'), tests_path %>

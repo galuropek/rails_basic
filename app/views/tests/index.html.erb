@@ -1,11 +1,11 @@
-<h2>Tests:</h2>
+<h2><%= t('.header') %></h2>
 <hr>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Questions</th>
-    <th>Actions</th>
+    <th><%= Test.human_attribute_name(:title) %></th>
+    <th><%= Test.human_attribute_name(:level) %></th>
+    <th><%= t('.questions') %></th>
+    <th><%= t('.actions') %></th>
   </tr>
 
   <%= render @tests %>

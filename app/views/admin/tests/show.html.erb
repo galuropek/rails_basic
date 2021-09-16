@@ -1,21 +1,21 @@
-<h2>Test</h2>
-<p><b>Title:</b> <%= @test.title %></p>
-<p><b>Level:</b> <%= @test.level %></p>
-<p><b>Questions count:</b> <%= @test.questions.count %></p>
+<h2><%= Test.model_name.human %></h2>
+<p><b><%= test_human_attr(:title) %>:</b> <%= @test.title %></p>
+<p><b><%= test_human_attr(:level) %>:</b> <%= @test.level %></p>
+<p><b><%= t('.questions') %>:</b> <%= @test.questions.count %></p>
 <p>
-  <%= link_to 'Edit', edit_admin_test_path(@test) %> |
-  <%= link_to 'Delete', admin_test_path(@test), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to t('edit'), edit_admin_test_path(@test) %> |
+  <%= link_to t('delete'), admin_test_path(@test), method: :delete, data: {confirm: t('confirm')} %>
 </p>
 <hr>
-<h2>Questions:</h2>
+<h2><%= t('.questions') %>:</h2>
 <table>
   <tr>
-    <th align="left">Body</th>
-    <th align="left">Answers count</th>
-    <th colspan="3" align="left">Actions</th>
+    <th align="left"><%= Question.human_attribute_name(:body) %></th>
+    <th align="left"><%= t('.answers') %></th>
+    <th colspan="3" align="left"><%= t('.actions') %></th>
   </tr>
   <%= render @test.questions %>
 </table>
 <hr>
-<%= link_to 'Create new question', new_admin_test_question_path(@test) %><br>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('.create_link'), new_admin_test_question_path(@test) %><br>
+<%= link_to t('back'), admin_tests_path %>
