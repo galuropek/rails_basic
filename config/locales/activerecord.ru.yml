@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+      question:
+        body: "Вопрос"
+
+    errors:
+      models:
+        test:
+          attributes:
+            title:
+              blank: "не может быть пустым"
+            level:
+              greater_than_or_equal_to: "не может быть отрицательным"

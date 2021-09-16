@@ -1,2 +1,57 @@
 ru:
-  hello: "Привет!"
+  hello: "Привет мир!"
+  back: "Назад"
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  start: "Старт"
+  next: "Дальше"
+  confirm: "Вы уверены?"
+
+  tests:
+    index:
+      actions: "Действия"
+      header: "Доступные тесты"
+      questions: "Вопросы"
+
+  test_passages:
+    show:
+      header: "Прохождение %{title} Теста"
+      progress: "Прогресс прохождения теста: %{progress}"
+    result:
+      header: "Тест %{title} был завершен"
+      success: "Тест пройден успешно!"
+      failed: "Тест не пройден!"
+      message: "вопросов правильные"
+
+  admin:
+    tests:
+      index:
+        actions: "Действия"
+        header: "Все тесты"
+        questions: "Вопросы"
+        create_link: "Создать новый Тест"
+      show:
+        actions: "Действия"
+        answers: "Ответы"
+        questions: "Вопросы"
+        create_link: "Создать новый Вопрос"
+      create:
+        success: "Тест успешно создан"
+      new:
+        header: "Создать новый Тест"
+      edit:
+        header: "Редактировать Тест"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Пожалуйста, выберите из списка"

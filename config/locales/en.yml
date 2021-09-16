@@ -1,23 +1,57 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  hello: "Hello world!"
+  back: "Back"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  start: "Start"
+  next: "Next"
+  confirm: "Are you sure?"
+
+  tests:
+    index:
+      actions: "Actions"
+      header: "Available tests"
+      questions: "Questions"
+
+  test_passages:
+    show:
+      header: "Passing %{title} Test"
+      progress: "Test progress: %{progress}"
+    result:
+      header: "Test %{title} was completed"
+      success: "Test passed successfully!"
+      failed: "Test failed!"
+      message: "questions are correct"
+
+  admin:
+    tests:
+      index:
+        actions: "Actions"
+        header: "All tests"
+        questions: "Questions"
+        create_link: "Create a new Test"
+      show:
+        actions: "Actions"
+        answers: "Answers"
+        questions: "Questions"
+        create_link: "Create a new Question"
+      create:
+        success: "Test successfully created"
+      new:
+        header: "Create a new Test"
+      edit:
+        header: "Edit Test"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Please, select from list"
