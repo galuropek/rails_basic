@@ -1,14 +1,32 @@
-<%= form_for [:admin, @test] do |form| %>
-  <%= render 'shared/errors', resource: @test %>
+<div class="row">
+  <div class="col col-md-4">
+    <%= form_for [:admin, @test] do |form| %>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group">
+            <%= render 'shared/errors', resource: @test %>
 
-  <%= form.label :title %><br>
-  <%= form.text_field :title, id: :test_title %><br>
+            <p>
+              <%= form.label :title %>
+              <%= form.text_field :title, id: :test_title, class: 'form-control' %>
+            </p>
 
-  <%= form.label :level %><br>
-  <%= form.number_field :level, id: :test_level %><br>
+            <p>
+              <%= form.label :level %>
+              <%= form.number_field :level, id: :test_level, class: 'form-control' %>
+            </p>
 
-  <%= form.label :category_id %>:
-  <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
+            <p>
+              <%= form.label :category_id %>:<br>
+              <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-select form-select-lg mb-3' %>
+            </p>
 
-  <%= form.submit %>
-<% end %>
+            <div>
+              <%= form.submit %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

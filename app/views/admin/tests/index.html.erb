@@ -1,6 +1,5 @@
 <h2><%= t('.header') %></h2>
-<hr>
-<table>
+<table class="table">
   <tr>
     <th><%= Test.human_attribute_name(:title) %></th>
     <th><%= Test.human_attribute_name(:level) %></th>
@@ -11,5 +10,5 @@
   <%= render @tests %>
 
 </table>
-<hr>
+
 <%= link_to t('.create_link'), new_admin_test_path %>

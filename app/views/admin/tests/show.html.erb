@@ -1,14 +1,17 @@
-<h2><%= Test.model_name.human %></h2>
-<p><b><%= Test.human_attribute_name(:title) %>:</b> <%= @test.title %></p>
-<p><b><%= Test.human_attribute_name(:level) %>:</b> <%= @test.level %></p>
-<p><b><%= t('.questions') %>:</b> <%= @test.questions.count %></p>
-<p>
-  <%= link_to t('edit'), edit_admin_test_path(@test) %> |
-  <%= link_to t('delete'), admin_test_path(@test), method: :delete, data: {confirm: t('confirm')} %>
-</p>
-<hr>
+<div class="card" style="width: 18rem;">
+  <h5 class="card-title card-header"><%= Test.model_name.human %></h5>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b><%= Test.human_attribute_name(:title) %>:</b> <%= @test.title %></li>
+      <li class="list-group-item"><b><%= Test.human_attribute_name(:level) %>:</b> <%= @test.level %></li>
+      <li class="list-group-item"><b><%= t('.questions') %>:</b> <%= @test.questions.count %></li>
+    </ul>
+    <%= link_to t('edit'), edit_admin_test_path(@test), class: 'card-link' %>
+    <%= link_to t('delete'), admin_test_path(@test), class: 'card-link', method: :delete, data: {confirm: t('confirm')} %>
+  </div>
+</div>
 <h2><%= t('.questions') %>:</h2>
-<table>
+<table class="table">
   <tr>
     <th align="left"><%= Question.human_attribute_name(:body) %></th>
     <th align="left"><%= t('.answers') %></th>
@@ -16,6 +19,6 @@
   </tr>
   <%= render @test.questions %>
 </table>
-<hr>
-<%= link_to t('.create_link'), new_admin_test_question_path(@test) %><br>
+
+<%= link_to t('.create_link'), new_admin_test_question_path(@test) %> |
 <%= link_to t('back'), admin_tests_path %>
