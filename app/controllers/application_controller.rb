@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = "Привет, #{resource.user_representation}!"
+    flash[:success] = "Привет, #{resource.user_representation}!"
     resource.admin? ? admin_tests_path : tests_path
   end
 
