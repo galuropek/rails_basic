@@ -1,11 +1,11 @@
-<footer>
-  <ul id="right">
-    <li>Test Guru - это приложение для создания / решения тестов.</li>
-    <li><%= link_to 'Учебный проект в онлайн-школе Thinknetica.', 'http://thinknetica.com/', target: '_blank' %></li>
-  </ul>
-  <ul id="left">
-    <li><%= current_year %></li>
-    <li>galuropek</li>
-    <li><%= github_url('galuropek', 'rails_basic') %></li>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="d-flex align-items-center">
+    <p class="mr-1"><%= current_year %></p>
+    <p class="ml-1">galuropek</p>
+    <p class="ml-1"><%= github_url('galuropek', 'rails_basic') %></p>
+  </div>
+  <ul class="justify-content-end list-unstyled d-flex">
+    <li class="ms-3">Test Guru - это приложение для создания / решения тестов.
+    <%= link_to 'Учебный проект в онлайн-школе Thinknetica.', 'http://thinknetica.com/', target: '_blank' %></li>
   </ul>
 </footer>

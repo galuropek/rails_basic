@@ -1,15 +1,12 @@
-<header class="mt-3">
-  <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-    <%= link_to 'Test Guru', root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
-
-    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-      <% if user_signed_in? %>
-        <span class="me-3 py-2 text-dark text-decoration-none">Welcome, <%= current_user.email %> Guru</span>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
-      <% else %>
-        <%= link_to "Registration", new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
-        <%= link_to "Login", new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
-      <% end %>
-    </nav>
-  </div>
-</header>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'Test Guru', root_path, class: "navbar-brand" %>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Welcome, <b><%= current_user.email %></b> Guru |
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Registration", new_user_registration_path %> |
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+  </span>
+</nav>
