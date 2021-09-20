@@ -18,3 +18,4 @@
 
 /.idea
 /.byebug_history
+.env
