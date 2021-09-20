@@ -1,10 +1,10 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 <% if @test_passage.success? %>
   <h3><%= t('.success') %></h3>
-  <% tag_class = "correct" %>
+  <% tag_class = "text-success" %>
 <% else %>
   <h3><%= t('.failed') %></h3>
-  <% tag_class = "incorrect" %>
+  <% tag_class = "text-danger" %>
 <% end %>
 <p>
   <%= content_tag :span, "#{@test_passage.correct_questions_percentage}% ", class: tag_class %>
