@@ -1,10 +1,35 @@
-<header class="mt-3 bg-info">
-  <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-    <%= link_to 'Admin Panel | Test Guru', root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+<header class="p-3 bg-dark text-white">
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <%= link_to 'Admin Panel Test Guru', admin_tests_path, class: "d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" %>
 
-    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <span class="me-3 py-2 text-dark text-decoration-none">Welcome, <%= current_user.email %> Guru</span>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto text-white">
+        <span class="me-3 py-2 text-dark text-decoration-none text-white">Welcome, <%= current_user.email %> Guru</span>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none text-white" %>
     </nav>
   </div>
 </header>
+
+<!--<header class="p-3 bg-dark text-white">-->
+<!--  <div class="container">-->
+<!--    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">-->
+      <%#= link_to 'Admin Panel | Test Guru', root_path, class: "d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" %>
+
+<!--      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">-->
+<!--        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>-->
+<!--        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>-->
+<!--        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>-->
+<!--        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>-->
+<!--        <li><a href="#" class="nav-link px-2 text-white">About</a></li>-->
+<!--      </ul>-->
+
+<!--      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">-->
+<!--        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">-->
+<!--      </form>-->
+
+<!--      <div class="text-end">-->
+<!--        <button type="button" class="btn btn-outline-light me-2">Login</button>-->
+<!--        <button type="button" class="btn btn-warning">Sign-up</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->
