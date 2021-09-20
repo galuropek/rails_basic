@@ -35,6 +35,7 @@ en:
         header: "All tests"
         questions: "Questions"
         create_link: "Create a new Test"
+        all_gists: "Show all Gists"
       show:
         actions: "Actions"
         answers: "Answers"
@@ -46,6 +47,9 @@ en:
         header: "Create a new Test"
       edit:
         header: "Edit Test"
+    gists:
+      index:
+        header: "All Gists"
 
   helpers:
     submit:

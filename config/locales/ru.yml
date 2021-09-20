@@ -35,6 +35,7 @@ ru:
         header: "Все тесты"
         questions: "Вопросы"
         create_link: "Создать новый Тест"
+        all_gists: "Показать все Gists"
       show:
         actions: "Действия"
         answers: "Ответы"
@@ -46,6 +47,11 @@ ru:
         header: "Создать новый Тест"
       edit:
         header: "Редактировать Тест"
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопрос"
+        user: "Пользователь"
 
   helpers:
     submit:
