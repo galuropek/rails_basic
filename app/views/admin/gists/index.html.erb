@@ -1,0 +1,13 @@
+<h2><%= t('.header') %></h2>
+<table class="table">
+  <tr>
+    <th><%= t('.question') %></th>
+    <th><%= t('.gist') %></th>
+    <th><%= t('.user') %></th>
+  </tr>
+
+  <%= render @gists %>
+
+</table>
+
+<%= link_to t('back'), admin_tests_path %>
