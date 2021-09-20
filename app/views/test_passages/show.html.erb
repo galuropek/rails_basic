@@ -10,6 +10,7 @@
         <%= b.label %>
       </li>
     <% end %>
+    <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %>
     <div class="mt-3">
       <%= form.submit t('next') %></p>
     </div>

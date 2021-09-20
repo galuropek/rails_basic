@@ -18,11 +18,15 @@ ru:
     show:
       header: "Прохождение %{title} Теста"
       progress: "Прогресс прохождения теста: %{progress}"
+      create_gist: "Создать Gist"
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
       failed: "Тест не пройден!"
       message: "вопросов правильные"
+    gist:
+      success: "Gist успешно создан: %{url}"
+      failed: "Gist не создан, что-то пошло не так!"
 
   admin:
     tests:

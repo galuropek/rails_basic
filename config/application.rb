@@ -24,5 +24,7 @@ module TestGuru
     config.active_record.raise_in_transactional_callbacks = true
     config.i18n.default_locale = :ru
     config.time_zone = 'Minsk'
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end
