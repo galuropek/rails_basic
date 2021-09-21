@@ -18,11 +18,15 @@ ru:
     show:
       header: "Прохождение %{title} Теста"
       progress: "Прогресс прохождения теста: %{progress}"
+      create_gist: "Создать Gist"
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
       failed: "Тест не пройден!"
       message: "вопросов правильные"
+    gist:
+      success: "Gist успешно создан: %{url}"
+      failed: "Gist не создан, что-то пошло не так!"
 
   admin:
     tests:
@@ -31,6 +35,8 @@ ru:
         header: "Все тесты"
         questions: "Вопросы"
         create_link: "Создать новый Тест"
+        all_gists: "Показать все Gists"
+        test_passage: "Пройти тест"
       show:
         actions: "Действия"
         answers: "Ответы"
@@ -42,6 +48,11 @@ ru:
         header: "Создать новый Тест"
       edit:
         header: "Редактировать Тест"
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопрос"
+        user: "Пользователь"
 
   helpers:
     submit:

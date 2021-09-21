@@ -1,5 +1,5 @@
 <h2><%= t('.header') %></h2>
-<table class="table">
+<table class="table table-dark table-striped">
   <tr>
     <th><%= Test.human_attribute_name(:title) %></th>
     <th><%= Test.human_attribute_name(:level) %></th>
@@ -11,4 +11,6 @@
 
 </table>
 
-<%= link_to t('.create_link'), new_admin_test_path %>
+<%= link_to t('.create_link'), new_admin_test_path, class: 'text-black' %><br>
+<%= link_to t('.all_gists'), admin_gists_path, class: 'text-black' %><br>
+<%= link_to t('.test_passage'), root_path, class: 'text-black' %>

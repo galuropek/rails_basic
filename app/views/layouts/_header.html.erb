@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <%= link_to 'Test Guru', current_user.admin? ? admin_tests_path : root_path, class: "navbar-brand" %>
+  <%= link_to 'Test Guru', current_user&.admin? ? admin_tests_path : root_path, class: "navbar-brand" %>
   <span class="navbar-text">
     <% if user_signed_in? %>
       Welcome, <b><%= current_user.email %></b> Guru |

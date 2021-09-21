@@ -2,7 +2,7 @@
   <td><%= test.title %></td>
   <td align="center"><%= test.level %></td>
   <td align="center"><%= test.questions.count %></td>
-  <td><%= link_to t('show'), admin_test_path(test) %></td>
-  <td><%= link_to t('edit'), edit_admin_test_path(test) %></td>
-  <td><%= link_to t('delete'), admin_test_path(test), method: :delete, data: {confirm: t('confirm')} %></td>
+  <td><%= link_to t('show'), admin_test_path(test), class: 'text-white' %></td>
+  <td><%= link_to t('edit'), edit_admin_test_path(test), class: 'text-white' %></td>
+  <td><%= link_to t('delete'), admin_test_path(test), class: 'text-white', method: :delete, data: {confirm: t('confirm')} %></td>
 </tr>

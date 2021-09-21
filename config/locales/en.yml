@@ -18,11 +18,15 @@ en:
     show:
       header: "Passing %{title} Test"
       progress: "Test progress: %{progress}"
+      create_gist: "Create Gist"
     result:
       header: "Test %{title} was completed"
       success: "Test passed successfully!"
       failed: "Test failed!"
       message: "questions are correct"
+    gist:
+      success: "Gist successfully created: %{url}"
+      failed: "Gist not created, something went wrong!"
 
   admin:
     tests:
@@ -31,6 +35,8 @@ en:
         header: "All tests"
         questions: "Questions"
         create_link: "Create a new Test"
+        all_gists: "Show all Gists"
+        test_passage: "Take the test"
       show:
         actions: "Actions"
         answers: "Answers"
@@ -42,6 +48,9 @@ en:
         header: "Create a new Test"
       edit:
         header: "Edit Test"
+    gists:
+      index:
+        header: "All Gists"
 
   helpers:
     submit:
