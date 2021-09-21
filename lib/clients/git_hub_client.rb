@@ -7,4 +7,8 @@ class GitHubClient
   def create_gist(params)
     @octokit_client.create_gist(params)
   end
+
+  def last_response
+    @octokit_client.last_response
+  end
 end
