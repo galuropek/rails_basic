@@ -36,6 +36,7 @@ ru:
         questions: "Вопросы"
         create_link: "Создать новый Тест"
         all_gists: "Показать все Gists"
+        test_passage: "Пройти тест"
       show:
         actions: "Действия"
         answers: "Ответы"

@@ -36,6 +36,7 @@ en:
         questions: "Questions"
         create_link: "Create a new Test"
         all_gists: "Show all Gists"
+        test_passage: "Take the test"
       show:
         actions: "Actions"
         answers: "Answers"
