@@ -5,13 +5,7 @@ class Gist < ActiveRecord::Base
   SHORT_QUESTION_CHARS_COUNT = 25
 
   def short_question_body
-    body = question.body
-
-    if body.length > SHORT_QUESTION_CHARS_COUNT
-      "#{body[0..SHORT_QUESTION_CHARS_COUNT - 1]}..."
-    else
-      body
-    end
+    question.body.truncate(SHORT_QUESTION_CHARS_COUNT)
   end
 
   def url_hash
