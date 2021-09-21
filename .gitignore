@@ -17,5 +17,6 @@
 /tmp
 
 /.idea
+/.vscode
 /.byebug_history
 .env
