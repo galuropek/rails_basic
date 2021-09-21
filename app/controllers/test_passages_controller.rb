@@ -24,7 +24,7 @@ class TestPassagesController < ApplicationController
       if result.html_url?
         Gist.create(user: current_user,
                     question: @test_passage.current_question,
-                    url: url)
+                    url: result.html_url)
 
         {success: t('.success', url: result.html_url)}
       else
