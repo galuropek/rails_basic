@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
@@ -32,15 +31,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise', '~> 4.0'
 gem 'bootstrap', '~> 4.1.1'
-gem "octokit", "~> 4.0"
+gem 'devise', '~> 4.0'
+gem 'octicons_helper', '~> 4.0'
+gem 'octokit', '~> 4.0'
 gem 'rubocop', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'dotenv-rails'
   gem 'byebug'
+  gem 'dotenv-rails'
   gem 'faker'
 end
 
@@ -51,6 +51,5 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem "letter_opener"
+  gem 'letter_opener'
 end
-
