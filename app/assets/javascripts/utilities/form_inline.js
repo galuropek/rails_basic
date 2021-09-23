@@ -9,7 +9,7 @@ document.addEventListener('turbolinks:load', function () {
 
   var errors = document.querySelector('.resource-errors')
 
-  if (errors) {
+  if (errors && controls.length) {
     var resourceId = errors.dataset.resourceId
     formInlineHandler(resourceId)
   }
