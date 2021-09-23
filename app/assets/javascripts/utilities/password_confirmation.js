@@ -11,7 +11,10 @@ function trackInputValue() {
     this.classList.add('bg-danger')
     this.parentElement.querySelector('.octicon-alert').classList.remove('hide')
     this.parentElement.querySelector('.octicon-check').classList.add('hide')
-  } else if (password == this.value) {
+    return;
+  }
+
+  if (password == this.value) {
     this.classList.remove('bg-danger')
     this.classList.add('bg-success')
     this.parentElement.querySelector('.octicon-alert').classList.add('hide')
