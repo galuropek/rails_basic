@@ -29,6 +29,10 @@ class TestPassage < ActiveRecord::Base
     test.questions.order(:id).index(current_question).next
   end
 
+  def percentage_progress(round: 2)
+    (question_number.to_f / test.questions.count * 100).round(round)
+  end
+
   private
 
   def before_validation_set_test_question

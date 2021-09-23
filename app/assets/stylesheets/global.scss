@@ -1,7 +1,19 @@
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+.progress {
+  width: 100%;
+  background-color: grey;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 30px;
+  background-color: green;
+  color: white;
 }
