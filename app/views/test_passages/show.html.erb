@@ -3,7 +3,6 @@
 <h3><%= @test_passage.current_question.body %></h3>
 <small><%= t('.progress', progress: "#{@test_passage.question_number}/#{@test_passage.test.questions.count}") %></small>
 <div class="progress">
-  <%# <div id="bar"></div> %>
   <%= content_tag :div, nil, class: "progress-bar", data: { progress: @test_passage.percentage_progress } %>
 </div>
 <ul class="list-group">
