@@ -1,4 +1,7 @@
 <h2><%= t('.header') %></h2>
+
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-dark table-striped">
   <tr>
     <th><%= Test.human_attribute_name(:title) %></th>

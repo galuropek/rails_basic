@@ -1,10 +1,10 @@
-<% if resource.errors.present? %>
-  <div class="alert alert-danger">
+<% if resource.present? && resource.errors.present? %>
+  <%= content_tag :div, class: 'alert alert-danger resource-errors', data: { resource_id: resource.id } do %>
     <h2><%= pluralize(resource.errors.count, 'error') %> detected:</h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
-  </div>
+  <% end %>
 <% end %>

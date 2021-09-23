@@ -48,6 +48,8 @@ en:
         header: "Create a new Test"
       edit:
         header: "Edit Test"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         header: "All Gists"

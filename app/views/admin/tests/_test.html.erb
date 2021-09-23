@@ -1,8 +1,22 @@
 <tr>
-  <td><%= test.title %></td>
+  <td>
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: @test == test ? @test : test %>
+  </td>
   <td align="center"><%= test.level %></td>
   <td align="center"><%= test.questions.count %></td>
   <td><%= link_to t('show'), admin_test_path(test), class: 'text-white' %></td>
-  <td><%= link_to t('edit'), edit_admin_test_path(test), class: 'text-white' %></td>
-  <td><%= link_to t('delete'), admin_test_path(test), class: 'text-white', method: :delete, data: {confirm: t('confirm')} %></td>
+  <td>
+    <%= link_to t('edit'),
+                edit_admin_test_path(test),
+                class: 'form-inline-link text-white',
+                data: { test_id: test.id } %>
+  </td>
+  <td>
+    <%= link_to t('delete'),
+                admin_test_path(test),
+                class: 'text-white',
+                method: :delete,
+                data: {confirm: t('confirm')} %>
+  </td>
 </tr>
