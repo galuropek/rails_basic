@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210920171801) do
+ActiveRecord::Schema.define(version: 20210924192822) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text     "body",                        null: false
@@ -20,6 +23,8 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",      null: false
@@ -35,8 +40,8 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "gists", ["question_id"], name: "index_gists_on_question_id"
-  add_index "gists", ["user_id"], name: "index_gists_on_user_id"
+  add_index "gists", ["question_id"], name: "index_gists_on_question_id", using: :btree
+  add_index "gists", ["user_id"], name: "index_gists_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.text     "body",       null: false
@@ -44,6 +49,8 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
 
   create_table "test_passages", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,9 +61,9 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.datetime "updated_at",                      null: false
   end
 
-  add_index "test_passages", ["current_question_id"], name: "index_test_passages_on_current_question_id"
-  add_index "test_passages", ["test_id"], name: "index_test_passages_on_test_id"
-  add_index "test_passages", ["user_id"], name: "index_test_passages_on_user_id"
+  add_index "test_passages", ["current_question_id"], name: "index_test_passages_on_current_question_id", using: :btree
+  add_index "test_passages", ["test_id"], name: "index_test_passages_on_test_id", using: :btree
+  add_index "test_passages", ["user_id"], name: "index_test_passages_on_user_id", using: :btree
 
   create_table "tests", force: :cascade do |t|
     t.string   "title",                   null: false
@@ -67,7 +74,9 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.integer  "user_id"
   end
 
-  add_index "tests", ["title", "level"], name: "index_tests_on_title_and_level", unique: true
+  add_index "tests", ["category_id"], name: "index_tests_on_category_id", using: :btree
+  add_index "tests", ["title", "level"], name: "index_tests_on_title_and_level", unique: true, using: :btree
+  add_index "tests", ["user_id"], name: "index_tests_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",     null: false
@@ -92,9 +101,9 @@ ActiveRecord::Schema.define(version: 20210920171801) do
     t.string   "last_name"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["type"], name: "index_users_on_type"
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["type"], name: "index_users_on_type", using: :btree
 
 end
