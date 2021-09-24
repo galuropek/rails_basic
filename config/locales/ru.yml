@@ -48,6 +48,8 @@ ru:
         header: "Создать новый Тест"
       edit:
         header: "Редактировать Тест"
+      form_inline:
+        submit: "Ок"
     gists:
       index:
         header: "Все Gists"

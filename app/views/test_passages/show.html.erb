@@ -2,6 +2,9 @@
 
 <h3><%= @test_passage.current_question.body %></h3>
 <small><%= t('.progress', progress: "#{@test_passage.question_number}/#{@test_passage.test.questions.count}") %></small>
+<div class="progress">
+  <%= content_tag :div, nil, class: "progress-bar", data: { progress: @test_passage.percentage_progress } %>
+</div>
 <ul class="list-group">
   <%= form_for :answer, url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
