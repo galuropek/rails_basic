@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   root 'tests#index'
 
-  devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout}
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
   resources :tests, only: :index do
     member do
@@ -28,4 +27,7 @@ Rails.application.routes.draw do
 
     resources :gists, only: :index
   end
+
+  get 'feedbacks/index', path: :feedbacks
+  post 'feedbacks/deliv'
 end

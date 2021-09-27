@@ -28,6 +28,13 @@ ru:
       success: "Gist успешно создан: %{url}"
       failed: "Gist не создан, что-то пошло не так!"
 
+  feedbacks:
+    index:
+      header: "Обратная связь"
+      body: "Вы можете отправить свой отзыв администратору"
+    form:
+      send: "Отправить отзыв"
+
   admin:
     tests:
       index:

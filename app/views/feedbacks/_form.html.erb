@@ -1,0 +1,6 @@
+<%= form_for :feedback, url: feedbacks_deliv_path do |form| %>
+  <div class="form-floating">
+    <%= form.text_area :body, class: "form-control", style: "height: 100px"%>
+  </div>
+  <%= form.submit t('.send'), class: "btn btn-primary float-sm-left mt-1" %>
+<% end  %>
