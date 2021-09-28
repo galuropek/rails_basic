@@ -1,7 +1,7 @@
 class FeedbacksController < ApplicationController
   def index; end
 
-  def deliv
+  def create
     feedback = params.dig(:feedback, :body)
 
     if feedback.present?

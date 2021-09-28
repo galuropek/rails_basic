@@ -28,6 +28,5 @@ Rails.application.routes.draw do
     resources :gists, only: :index
   end
 
-  get 'feedbacks/index', path: :feedbacks
-  post 'feedbacks/deliv'
+  resources :feedbacks, only: %i[index create]
 end
