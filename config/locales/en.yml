@@ -20,6 +20,8 @@ en:
       progress: "Test progress: %{progress}"
       create_gist: "Create Gist"
       no_questions: "There are no any questions in %{title} test..."
+    update:
+      empty_answer: "At least one answer is required!"
     result:
       header: "Test %{title} was completed"
       success: "Test passed successfully!"

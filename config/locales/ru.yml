@@ -20,6 +20,8 @@ ru:
       progress: "Прогресс прохождения теста: %{progress}"
       create_gist: "Создать Gist"
       no_questions: "У теста %{title} нет вопросов..."
+    update:
+      empty_answer: "Нужно выбрать хотя бы один ответ!"
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
