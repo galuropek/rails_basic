@@ -16,9 +16,10 @@ ru:
 
   test_passages:
     show:
-      header: "Прохождение %{title} Теста"
+      header: "Прохождение %{title} теста"
       progress: "Прогресс прохождения теста: %{progress}"
       create_gist: "Создать Gist"
+      no_questions: "У теста %{title} нет вопросов..."
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
