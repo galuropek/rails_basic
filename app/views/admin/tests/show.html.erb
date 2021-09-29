@@ -1,24 +1,28 @@
-<div class="card" style="width: 18rem;">
-  <h5 class="card-title card-header"><%= Test.model_name.human %></h5>
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><b><%= Test.human_attribute_name(:title) %>:</b> <%= @test.title %></li>
-      <li class="list-group-item"><b><%= Test.human_attribute_name(:level) %>:</b> <%= @test.level %></li>
-      <li class="list-group-item"><b><%= t('.questions') %>:</b> <%= @test.questions.count %></li>
-    </ul>
-    <%= link_to t('edit'), edit_admin_test_path(@test), class: 'card-link' %>
-    <%= link_to t('delete'), admin_test_path(@test), class: 'card-link', method: :delete, data: {confirm: t('confirm')} %>
+<div class="row mt-3">
+  <div class="col-3">
+    <div class="card border-0" style="width: 18rem;">
+      <div class="card-body pt-0">
+        <h2 class="card-title"><%= Test.model_name.human %></h2>
+        <p class="card-text"><b><%= Test.human_attribute_name(:title) %>:</b> <%= @test.title %></p>
+        <p class="card-text"><b><%= Test.human_attribute_name(:level) %>:</b> <%= @test.level %></p>
+        <p class="card-text"><b><%= t('.questions') %>:</b> <%= @test.questions.count %></p>
+        <%= link_to t('edit'), edit_admin_test_path(@test), class: 'card-link' %>
+        <%= link_to t('delete'), admin_test_path(@test), class: 'card-link', method: :delete, data: {confirm: t('confirm')} %>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <h2><%= t('.questions') %></h2>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th align="left"><%= Question.human_attribute_name(:body) %></th>
+        <th align="left"><%= t('.answers') %></th>
+        <th colspan="3" align="left"><%= t('.actions') %></th>
+      </tr>
+      <%= render @test.questions %>
+    </table>
+
+    <%= link_to t('.create_link'), new_admin_test_question_path(@test) %> |
+    <%= link_to t('back'), admin_tests_path %>
   </div>
 </div>
-<h2><%= t('.questions') %>:</h2>
-<table class="table">
-  <tr>
-    <th align="left"><%= Question.human_attribute_name(:body) %></th>
-    <th align="left"><%= t('.answers') %></th>
-    <th colspan="3" align="left"><%= t('.actions') %></th>
-  </tr>
-  <%= render @test.questions %>
-</table>
-
-<%= link_to t('.create_link'), new_admin_test_question_path(@test) %> |
-<%= link_to t('back'), admin_tests_path %>
