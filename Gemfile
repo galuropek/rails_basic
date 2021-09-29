@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.8'
 gem 'pg', '~> 0.20'
+gem 'rails', '4.2.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'devise', '~> 4.0'
+gem 'faker'
+gem 'mailjet'
 gem 'octicons_helper', '~> 4.0'
 gem 'octokit', '~> 4.0'
 gem 'rubocop', require: false
@@ -40,7 +42,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'dotenv-rails'
-  gem 'faker'
 end
 
 group :development do

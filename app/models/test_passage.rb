@@ -30,7 +30,7 @@ class TestPassage < ActiveRecord::Base
   end
 
   def percentage_progress(round: 2)
-    (question_number.to_f / test.questions.count * 100).round(round)
+    ((question_number - 1).to_f / test.questions.count * 100).round(round)
   end
 
   private

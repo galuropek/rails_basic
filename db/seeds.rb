@@ -2,13 +2,13 @@
 category = Category.create!(title: "Programming Languages")
 
 # correct_user
-correct_user = Admin.create!(
-  email: "test1234@gmail.com",
-  first_name: 'Harry',
-  last_name: 'Potter',
-  password: "test1234",
-  password_confirmation: "test1234"
-)
+# correct_user = Admin.create!(
+#   email: "test1234@gmail.com",
+#   first_name: 'Harry',
+#   last_name: 'Potter',
+#   password: "test1234",
+#   password_confirmation: "test1234"
+# )
 
 # Test model
 tests = []
@@ -41,7 +41,7 @@ correct_question2.answers.push(Answer.create!(body: "NoMethodError", correct: tr
 
 correct_test.questions.push(correct_question)
 correct_test.questions.push(correct_question2)
-correct_user.tests.push(correct_test)
+# correct_user.tests.push(correct_test)
 
 tests.each_with_index do |test, index|
   questions << Question.create!(
@@ -56,12 +56,12 @@ questions.each do |question|
 end
 
 # User model
-5.times do
-  password = Faker::Internet.password
-  User.create!(
-    email: Faker::Internet.email,
-    password: password,
-    password_confirmation: password,
-    tests: tests[0..rand(0..2)]
-  )
-end
+# 5.times do
+#   password = Faker::Internet.password
+#   User.create!(
+#     email: Faker::Internet.email,
+#     password: password,
+#     password_confirmation: password,
+#     tests: tests[0..rand(0..2)]
+#   )
+# end

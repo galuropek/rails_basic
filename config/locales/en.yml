@@ -5,6 +5,7 @@ en:
   edit: "Edit"
   delete: "Delete"
   start: "Start"
+  no_questions: "There are no questions"
   next: "Next"
   confirm: "Are you sure?"
 
@@ -19,6 +20,9 @@ en:
       header: "Passing %{title} Test"
       progress: "Test progress: %{progress}"
       create_gist: "Create Gist"
+      no_questions: "There are no any questions in %{title} test..."
+    update:
+      empty_answer: "At least one answer is required!"
     result:
       header: "Test %{title} was completed"
       success: "Test passed successfully!"
@@ -27,6 +31,13 @@ en:
     gist:
       success: "Gist successfully created: %{url}"
       failed: "Gist not created, something went wrong!"
+
+  feedbacks:
+    index:
+      header: "Feedback"
+      body: "You can send your feedback to the administrator"
+    form:
+      send: "Send feedback"
 
   admin:
     tests:

@@ -5,6 +5,7 @@ ru:
   edit: "Редактировать"
   delete: "Удалить"
   start: "Старт"
+  no_questions: "Нет вопросов"
   next: "Дальше"
   confirm: "Вы уверены?"
 
@@ -16,9 +17,12 @@ ru:
 
   test_passages:
     show:
-      header: "Прохождение %{title} Теста"
+      header: "Прохождение %{title} теста"
       progress: "Прогресс прохождения теста: %{progress}"
       create_gist: "Создать Gist"
+      no_questions: "У теста %{title} нет вопросов..."
+    update:
+      empty_answer: "Нужно выбрать хотя бы один ответ!"
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
@@ -27,6 +31,13 @@ ru:
     gist:
       success: "Gist успешно создан: %{url}"
       failed: "Gist не создан, что-то пошло не так!"
+
+  feedbacks:
+    index:
+      header: "Обратная связь"
+      body: "Вы можете отправить свой отзыв администратору"
+    form:
+      send: "Отправить отзыв"
 
   admin:
     tests:
