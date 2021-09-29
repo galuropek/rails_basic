@@ -5,6 +5,7 @@ en:
   edit: "Edit"
   delete: "Delete"
   start: "Start"
+  no_questions: "There are no questions"
   next: "Next"
   confirm: "Are you sure?"
 
