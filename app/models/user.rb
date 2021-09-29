@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :trackable, :rememberable, :validatable, :confirmable
 
+  has_and_belongs_to_many :badges
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: :user_id
