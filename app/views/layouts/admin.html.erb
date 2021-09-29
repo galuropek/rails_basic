@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title>Admin panel | TestGuru</title>
+
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <%= render 'admin/header' %>
-  <div class="content">
+  <div class="container">
+    <%= render 'admin/header' %>
 
     <%= render 'shared/flash' %>
 
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
   </div>
-  <%= render 'layouts/footer' %>
-</div>
 </body>
 </html>
