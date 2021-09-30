@@ -3,7 +3,7 @@
     <%= image_tag badge.image_url, class: 'card-img-top round_image' %>
     <div class="card-body">
       <h5 class="card-title"><%= badge.title %></h5>
-      <%= link_to t('.edit'), '#', class: "card-link text-info" %>
+      <%= link_to t('.edit'), edit_admin_badge_path(badge), class: "card-link text-info" %>
       <%= link_to t('.remove'),
                   admin_badge_path(badge),
                   method: :delete,

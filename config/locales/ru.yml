@@ -73,6 +73,7 @@ ru:
         create: "Создать новый Бэйдж"
       new:
         create: "Создать новый Бэйдж"
+        update: "Обновить Бэйдж"
 
   helpers:
     submit:
@@ -81,6 +82,7 @@ ru:
         update: "Обновить тест"
       badge:
         create: "Создать Бэйдж"
+        update: "Обновить Бэйдж"
     label:
       test:
         title: "Название"
