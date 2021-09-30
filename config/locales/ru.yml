@@ -71,12 +71,16 @@ ru:
       index:
         header: "Бэйджи"
         create: "Создать новый Бэйдж"
+      new:
+        create: "Создать новый Бэйдж"
 
   helpers:
     submit:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      badge:
+        create: "Создать Бэйдж"
     label:
       test:
         title: "Название"

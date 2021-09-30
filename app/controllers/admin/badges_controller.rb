@@ -11,9 +11,8 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new(badge_params)
 
     if @badge.save
-      redirect_to admin_badges_path, success: t('.success')
+      redirect_to admin_badges_path, notice: t('.success')
     else
-      flash.now[:danger] = t('.failed')
       render :new
     end
   end
