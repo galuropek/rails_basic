@@ -1,0 +1,14 @@
+<div class="col-4">
+  <%= form_for [:admin, @badge] do |form| %>
+
+    <%= render 'shared/errors', resource: @badge %>
+
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+
+    <%= form.label :image_url, class: 'form-label' %>
+    <%= form.text_field :image_url, id: :badge_image_url, class: 'form-control' %>
+
+    <%= form.submit class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>

@@ -48,6 +48,7 @@ ru:
         create_link: "Создать новый Тест"
         all_gists: "Показать все Gists"
         test_passage: "Пройти тест"
+        badges: "Показать все Бэйджи (new)"
       show:
         actions: "Действия"
         answers: "Ответы"
@@ -66,6 +67,10 @@ ru:
         header: "Все Gists"
         question: "Вопрос"
         user: "Пользователь"
+    badges:
+      index:
+        header: "Бэйджи"
+        create: "Создать новый Бэйдж"
 
   helpers:
     submit:

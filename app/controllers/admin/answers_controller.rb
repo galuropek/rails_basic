@@ -1,4 +1,4 @@
-class Admin::AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
   before_action :authenticate_user!
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :set_question, only: [:new, :create]
