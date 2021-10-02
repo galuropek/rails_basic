@@ -2,7 +2,11 @@
   <%= link_to 'Test Guru', current_user&.admin? ? admin_tests_path : root_path, class: "navbar-brand" %>
   <span class="navbar-text">
     <% if user_signed_in? %>
-      Welcome, <b><%= current_user.email %></b> Guru |
+      <% current_user.counted_badges_urls.each do |badge, count| %>
+        <%= image_tag badge.image_url, class: 'badge_logo', alt: badge.title %>
+        <small class="align-bottom"><%= "x#{count}" if count > 1 %></small>
+      <% end %>
+      <b class='pl-3'><%= current_user.email %></b> Guru |
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "Registration", new_user_registration_path %> |

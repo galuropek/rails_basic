@@ -14,7 +14,13 @@ class User < ActiveRecord::Base
   end
 
   def tests_by_level(level)
-    self.tests.where(level: level)
+    tests.where(level: level)
+  end
+
+  def counted_badges_urls
+    badges.group_by(&:title).each_with_object({}) do |(_, badges), hash|
+      hash[badges.first] = badges.count
+    end
   end
 
   def user_representation
@@ -22,6 +28,6 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    self.is_a?(Admin)
+    is_a?(Admin)
   end
 end
