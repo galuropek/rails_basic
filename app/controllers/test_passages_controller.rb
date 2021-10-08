@@ -1,5 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_rules, only: :update
   before_action :set_test_passage, only: %i[show result update gist]
 
   def show; end
@@ -13,6 +14,8 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(answer_ids)
 
     if @test_passage.completed?
+      badges = deserved_badges
+      flash[:success] = badges.map(&:notification).join("\n") if badges.any?
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -38,6 +41,14 @@ class TestPassagesController < ApplicationController
   def empty_answer
     flash.now[:danger] = t('.empty_answer')
     render :show
+  end
+
+  def deserved_badges
+    @rules.map { |rule| rule.accept!(current_user) }.compact
+  end
+
+  def set_rules
+    @rules = Rule.all
   end
 
   def set_test_passage
