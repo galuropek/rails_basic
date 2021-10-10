@@ -8,7 +8,7 @@ class CategoryRule < Rule
     return if success_tests.empty? || !rule_complete?(success_tests)
 
     current_user.badges.push(badge)
-    success_passages.each { |passage| passage.update!(has_achievement: true) }
+    success_passages.each { |passage| passage.update!(category_achievement: true) }
     badge
   end
 
@@ -28,6 +28,6 @@ class CategoryRule < Rule
       .test_passages
       .joins('JOIN tests ON tests.id = test_passages.test_id')
       .joins('JOIN categories ON categories.id = tests.category_id')
-      .where('categories.title = ? and test_passages.success = ? and test_passages.has_achievement = ?', value, true, false)
+      .where('categories.title = ? and test_passages.success = ? and test_passages.category_achievement = ?', value, true, false)
   end
 end

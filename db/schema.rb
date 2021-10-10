@@ -83,11 +83,12 @@ ActiveRecord::Schema.define(version: 20211003143518) do
     t.integer  "user_id"
     t.integer  "test_id"
     t.integer  "current_question_id"
-    t.integer  "correct_questions",   default: 0
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "success",             default: false
-    t.boolean  "has_achievement",     default: false
+    t.integer  "correct_questions",    default: 0
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "success",              default: false
+    t.boolean  "category_achievement", default: false
+    t.boolean  "level_achievement",    default: false
   end
 
   add_index "test_passages", ["current_question_id"], name: "index_test_passages_on_current_question_id", using: :btree

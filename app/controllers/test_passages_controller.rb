@@ -15,7 +15,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       badges = @rules.map { |rule| rule.accept!(@test_passage) }.compact
-      flash[:success] = badges.map(&:notification).join("\n") if badges.any?
+      flash[:badges] = badges.map { |badge| { image_url: badge.image_url, notification: badge.notification } }
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
