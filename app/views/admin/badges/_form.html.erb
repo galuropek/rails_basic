@@ -12,6 +12,11 @@
       <%= form.text_field :image_url, id: :badge_image_url, class: 'form-control' %>
     </div>
 
+    <div class="mb-3">
+      <%= form.label :rule_id %>:<br>
+      <%= form.collection_select :rule_id, Rule.all, :id, :title, prompt: true, class: 'form-select form-select-lg mb-3' %>
+    </div>
+
     <%= form.submit class: 'btn btn-primary' %>
   <% end %>
 </div>

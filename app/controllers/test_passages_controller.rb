@@ -44,7 +44,7 @@ class TestPassagesController < ApplicationController
   end
 
   def set_rules
-    @rules = Rule.all
+    @rules = Badge.all.map(&:rule).compact
   end
 
   def set_test_passage
