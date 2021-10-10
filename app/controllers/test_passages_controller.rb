@@ -14,7 +14,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(answer_ids)
 
     if @test_passage.completed?
-      badges = deserved_badges
+      badges = @rules.map { |rule| rule.accept!(@test_passage) }.compact
       flash[:success] = badges.map(&:notification).join("\n") if badges.any?
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -41,10 +41,6 @@ class TestPassagesController < ApplicationController
   def empty_answer
     flash.now[:danger] = t('.empty_answer')
     render :show
-  end
-
-  def deserved_badges
-    @rules.map { |rule| rule.accept!(current_user) }.compact
   end
 
   def set_rules
