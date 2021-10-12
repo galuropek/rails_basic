@@ -1,6 +1,5 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_rules, only: :update
   before_action :set_test_passage, only: %i[show result update gist]
 
   def show; end
@@ -40,10 +39,6 @@ class TestPassagesController < ApplicationController
   def empty_answer
     flash.now[:danger] = t('.empty_answer')
     render :show
-  end
-
-  def set_rules
-    @rules = Badge.all.map(&:rule).compact
   end
 
   def set_test_passage
