@@ -9,12 +9,12 @@ class Test < ActiveRecord::Base
                     uniqueness: {scope: :level}
   validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}
 
-  scope :by_level, -> (level) { where(level: level) }
+  scope :by_level, ->(level) { where(level: level) }
   scope :easy, -> { by_level(0..1) }
   scope :medium, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
 
-  scope :tests_by_category_name, -> (category_name) {
+  scope :by_category_name, -> (category_name) {
     joins('JOIN categories ON categories.id = tests.category_id')
       .where('categories.title = ?', category_name)
   }

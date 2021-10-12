@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211003143518) do
+ActiveRecord::Schema.define(version: 20210930192741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20211003143518) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "badges", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "image_url",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "rule_id"
+    t.string   "title",                   null: false
+    t.string   "image_url",               null: false
+    t.integer  "rule_type",               null: false
+    t.string   "value",      default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
-  add_index "badges", ["rule_id"], name: "index_badges_on_rule_id", using: :btree
   add_index "badges", ["title"], name: "index_badges_on_title", unique: true, using: :btree
 
   create_table "badges_users", id: false, force: :cascade do |t|
@@ -56,9 +56,6 @@ ActiveRecord::Schema.define(version: 20211003143518) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "gists", ["question_id"], name: "index_gists_on_question_id", using: :btree
-  add_index "gists", ["user_id"], name: "index_gists_on_user_id", using: :btree
-
   create_table "questions", force: :cascade do |t|
     t.text     "body",       null: false
     t.integer  "test_id"
@@ -68,27 +65,14 @@ ActiveRecord::Schema.define(version: 20211003143518) do
 
   add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
 
-  create_table "rules", force: :cascade do |t|
-    t.string   "title",                        null: false
-    t.string   "value",                        null: false
-    t.string   "type",        default: "Rule", null: false
-    t.integer  "category_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  add_index "rules", ["category_id"], name: "index_rules_on_category_id", using: :btree
-
   create_table "test_passages", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "test_id"
     t.integer  "current_question_id"
-    t.integer  "correct_questions",    default: 0
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.boolean  "success",              default: false
-    t.boolean  "category_achievement", default: false
-    t.boolean  "level_achievement",    default: false
+    t.boolean  "success",             default: false
+    t.integer  "correct_questions",   default: 0
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "test_passages", ["current_question_id"], name: "index_test_passages_on_current_question_id", using: :btree
@@ -136,6 +120,12 @@ ActiveRecord::Schema.define(version: 20211003143518) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["type"], name: "index_users_on_type", using: :btree
 
-  add_foreign_key "badges", "rules"
-  add_foreign_key "rules", "categories"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "test_passages", "tests"
+  add_foreign_key "test_passages", "users"
+  add_foreign_key "tests", "categories"
+  add_foreign_key "tests", "users"
 end

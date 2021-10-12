@@ -5,7 +5,8 @@ class Badge < ActiveRecord::Base
   validates :title, presence: true,
                     uniqueness: true
 
-  def notification
-    rule&.notification
-  end
+  enum rule_type: %w[category level first_attempt]
+
+  attr_accessor :notification
+
 end

@@ -13,8 +13,13 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :rule_id %>:<br>
-      <%= form.collection_select :rule_id, Rule.all, :id, :title, prompt: true, class: 'form-select form-select-lg mb-3' %>
+      <%= form.label :rule_type, class: 'form-label' %><br>
+      <%= form.select :rule_type, Badge.rule_types.keys, {}, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :value, class: 'form-label' %>
+      <%= form.text_field :value, id: :badge_image_url, class: 'form-control' %>
     </div>
 
     <%= form.submit class: 'btn btn-primary' %>
