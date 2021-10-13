@@ -5,21 +5,24 @@ Badge.create!(
   title: "Category",
   image_url: "https://i.ibb.co/YZSmmfD/2426188-200.png",
   rule_type: "category",
-  value: "Programming Languages"
+  value: "Programming Languages",
+  notification: "Вы получили ачивку за прохождение всех тестов из категории Programming Languages!"
 )
 
 Badge.create!(
   title: "Level",
   image_url: "https://i.ibb.co/2W0gXWX/kerbau-163205451.jpg",
   rule_type: "level",
-  value: "1"
+  value: "1",
+  notification: "Вы получили ачивку за прохождение всех тестов c уровнем 1!"
 )
 
 Badge.create!(
   title: "First attempt",
   image_url: "https://i.ibb.co/mcGcTBX/47993.png",
   rule_type: "first_attempt",
-  value: ""
+  value: "",
+  notification: "Вы получили ачивку за прохождение теста с первого раза!"
 )
 
 # correct_user

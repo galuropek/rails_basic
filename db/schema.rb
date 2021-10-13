@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20210930192741) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "badges", force: :cascade do |t|
-    t.string   "title",                   null: false
-    t.string   "image_url",               null: false
-    t.integer  "rule_type",               null: false
-    t.string   "value",      default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "title",                     null: false
+    t.string   "image_url",                 null: false
+    t.integer  "rule_type",                 null: false
+    t.string   "value",        default: ""
+    t.string   "notification", default: ""
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "badges", ["title"], name: "index_badges_on_title", unique: true, using: :btree

@@ -7,6 +7,4 @@ class Badge < ActiveRecord::Base
 
   enum rule_type: %w[category level first_attempt]
 
-  attr_accessor :notification
-
 end

@@ -19,7 +19,12 @@
 
     <div class="mb-3">
       <%= form.label :value, class: 'form-label' %>
-      <%= form.text_field :value, id: :badge_image_url, class: 'form-control' %>
+      <%= form.text_field :value, id: :badge_value, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :notification, class: 'form-label' %>
+      <%= form.text_field :notification, id: :badge_notification, class: 'form-control' %>
     </div>
 
     <%= form.submit class: 'btn btn-primary' %>
