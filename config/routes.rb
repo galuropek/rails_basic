@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+
+    resources :badges, except: :showg
   end
 
   resources :feedbacks, only: %i[index create]

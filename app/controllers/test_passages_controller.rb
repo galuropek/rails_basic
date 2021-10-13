@@ -13,6 +13,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(answer_ids)
 
     if @test_passage.completed?
+      flash[:badges] = BadgeService.new(@test_passage).call
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

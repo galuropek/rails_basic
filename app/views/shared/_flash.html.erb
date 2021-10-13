@@ -1,3 +1,12 @@
 <% flash.each do |key, message| %>
-  <%= content_tag :p, message, class: "alert alert-#{key}" %>
+  <% if key == 'badges' %>
+    <% message.each do |badge| %>
+      <p class="alert alert-success">
+        <%= image_tag badge['image_url'], class: 'badge_logo' %>
+        <%= badge['notification'] %>
+      </p>
+    <% end %>
+  <% else %>
+    <%= content_tag :p, message, class: "alert alert-#{key}" %>
+  <% end %>
 <% end %>

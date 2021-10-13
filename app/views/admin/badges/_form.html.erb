@@ -1,0 +1,32 @@
+<%= render 'shared/errors', resource: @badge %>
+
+<div class="col-4">
+  <%= form_for [:admin, @badge] do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, class: 'form-label' %>
+      <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :image_url, class: 'form-label' %>
+      <%= form.text_field :image_url, id: :badge_image_url, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :rule_type, class: 'form-label' %><br>
+      <%= form.select :rule_type, Badge.rule_types.keys, {}, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :value, class: 'form-label' %>
+      <%= form.text_field :value, id: :badge_value, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :notification, class: 'form-label' %>
+      <%= form.text_field :notification, id: :badge_notification, class: 'form-control' %>
+    </div>
+
+    <%= form.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

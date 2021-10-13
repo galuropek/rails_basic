@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      badge: "Бэйдж"
 
     attributes:
       test:
@@ -9,6 +10,9 @@ ru:
         level: "Уровень"
       question:
         body: "Вопрос"
+      badge:
+        title: "Название"
+        image_url: "Хостинг урл картинки"
 
     errors:
       models:
@@ -18,3 +22,8 @@ ru:
               blank: "не может быть пустым"
             level:
               greater_than_or_equal_to: "не может быть отрицательным"
+        badge:
+          attributes:
+            title:
+              taken: "должно быть уникальным, такое уже существует!"
+              blank: "не может быть пустым!"

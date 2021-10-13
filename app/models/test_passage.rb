@@ -4,7 +4,7 @@ class TestPassage < ActiveRecord::Base
   belongs_to :current_question, class_name: 'Question'
 
   before_validation :before_validation_set_test_question, on: :create
-  before_update :before_save_set_next_question, on: :update
+  before_update :before_save_set_next_question, on: :update, unless: :completed?
 
   SUCCESS_THRESHOLD = 85
 
@@ -41,6 +41,7 @@ class TestPassage < ActiveRecord::Base
 
   def before_save_set_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    self.success = true if completed? && success?
   end
 
   def correct_answer?(answer_ids)

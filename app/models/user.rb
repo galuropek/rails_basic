@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :trackable, :rememberable, :validatable, :confirmable
 
+  has_and_belongs_to_many :badges
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: :user_id
@@ -13,7 +14,13 @@ class User < ActiveRecord::Base
   end
 
   def tests_by_level(level)
-    self.tests.where(level: level)
+    tests.where(level: level)
+  end
+
+  def counted_badges_urls
+    badges.group_by(&:title).each_with_object({}) do |(_, badges), hash|
+      hash[badges.first] = badges.count
+    end
   end
 
   def user_representation
@@ -21,6 +28,6 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    self.is_a?(Admin)
+    is_a?(Admin)
   end
 end
