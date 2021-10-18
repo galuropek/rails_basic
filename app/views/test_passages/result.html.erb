@@ -6,6 +6,9 @@
       <% if @test_passage.success? %>
         <%= t('.success') %>
         <% tag_class = "text-success" %>
+      <% elsif @test_passage.time_over? %>
+        <%= t('.time_over') %>
+        <% tag_class = "text-danger" %>
       <% else %>
         <%= t('.failed') %>
         <% tag_class = "text-danger" %>

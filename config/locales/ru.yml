@@ -23,11 +23,13 @@ ru:
       no_questions: "У теста %{title} нет вопросов..."
     update:
       empty_answer: "Нужно выбрать хотя бы один ответ!"
+      time_over: "Время вышло!"
     result:
       header: "Тест %{title} был завершен"
       success: "Тест пройден успешно!"
       failed: "Тест не пройден!"
       message: "вопросов правильные"
+      time_over: "Время вышло! Тест завершен!"
     gist:
       success: "Gist успешно создан: %{url}"
       failed: "Gist не создан, что-то пошло не так!"

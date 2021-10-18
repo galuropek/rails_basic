@@ -7,12 +7,12 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    answer_ids = params.dig(:answer, :answer_ids)
-    return empty_answer if answer_ids.nil? || answer_ids.empty?
+    @test_passage.accept!(params.dig(:answer, :answer_ids) || [])
 
-    @test_passage.accept!(answer_ids)
-
-    if @test_passage.completed?
+    if @test_passage.time_over?
+      flash[:danger] = t('.time_over')
+      redirect_to result_test_passage_path(@test_passage)
+    elsif @test_passage.completed?
       flash[:badges] = BadgeService.new(@test_passage).call
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -36,10 +36,10 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def empty_answer
-    flash.now[:danger] = t('.empty_answer')
-    render :show
-  end
+  # def empty_answer
+  #   flash.now[:danger] = t('.empty_answer')
+  #   render :show
+  # end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
