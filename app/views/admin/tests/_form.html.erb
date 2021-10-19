@@ -17,6 +17,11 @@
             </p>
 
             <p>
+              <%= form.label :timer %>
+              <%= form.time_field :timer, id: :test_timer, class: 'form-control' %>
+            </p>
+
+            <p>
               <%= form.label :category_id %>:<br>
               <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-select form-select-lg mb-3' %>
             </p>

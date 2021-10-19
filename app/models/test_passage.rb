@@ -33,6 +33,18 @@ class TestPassage < ActiveRecord::Base
     ((question_number - 1).to_f / test.questions.count * 100).round(round)
   end
 
+  def time_left
+    return 0 if time_over?
+
+    (created_at + test.time_in_seconds - Time.now).ceil
+  end
+
+  def time_over?
+    return false unless test.timer?
+
+    Time.now > created_at + test.time_in_seconds
+  end
+
   private
 
   def before_validation_set_test_question
@@ -41,7 +53,7 @@ class TestPassage < ActiveRecord::Base
 
   def before_save_set_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
-    self.success = true if completed? && success?
+    self.success = true if completed? && success? && !time_over?
   end
 
   def correct_answer?(answer_ids)

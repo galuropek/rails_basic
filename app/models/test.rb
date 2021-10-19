@@ -22,4 +22,16 @@ class Test < ActiveRecord::Base
   def self.titles_by_category_name(category_name)
     tests_by_category_name(category_name).order(title: :desc).pluck(:title)
   end
+
+  def time_in_seconds
+    timer.hour * 3600 + timer.min * 60 if timer?
+  end
+
+  def time_in_strf
+    timer.hour.positive? ? timer.strftime('%H:%M:%S') : timer.strftime('%M:%S')
+  end
+
+  def timer?
+    !!timer
+  end
 end
